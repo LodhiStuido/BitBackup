@@ -1,0 +1,218 @@
+/* Base styles for the light theme, these are overridden by .dark class for dark theme */
+body {
+    font-family: 'Inter', sans-serif;
+    --bg-color: #f8fafc; /* Light background */
+    --text-color: #0f172a; /* Dark text */
+    --text-dim-color: #64748b; /* Dimmer text for secondary info */
+    --card-bg-color: #ffffff; /* White card background */
+    --border-color: #e2e8f0; /* Light border color */
+    --accent-color: #4f46e5; /* Default accent color (indigo-600) */
+    --accent-hover-color: #4338ca; /* Hover state for accent color */
+    --accent-text-color: #ffffff; /* White text on accent backgrounds */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Styles for the dark theme, applied when .dark class is on body */
+body.dark {
+    --bg-color: #262729; /* Dark background (slate-900) */
+    --text-color: #f8fafc; /* Light text (slate-50) */
+    --text-dim-color: #94a3b8; /* Dimmer text for dark theme */
+    --card-bg-color: #262729; /* Dark card background (slate-800) */
+    --border-color: #334155; /* Darker border color (slate-700) */
+}
+
+/* Apply theme colors to general elements */
+h1, h2, h3, h4 {
+    color: var(--text-color);
+}
+
+p, label, select, button {
+    color: var(--text-dim-color);
+}
+
+/* Feature Card */
+.feature-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition: all 0.3s ease-in-out;
+}
+.feature-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+    transform: translateY(-0.25rem);
+}
+.feature-card h3 {
+    color: var(--text-color);
+}
+.feature-card .text-3xl {
+    color: var(--accent-color);
+}
+
+/* Download Button */
+#downloadButton, #startBtn {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+}
+#downloadButton:hover, #startBtn:hover {
+    background-color: var(--accent-hover-color);
+}
+
+/* Chart specific container styling */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 280px;
+    max-height: 280px;
+}
+
+/* Styles for the preferences panel animation */
+.preferences-panel {
+    transition: all 0.3s ease-in-out;
+    transform-origin: top;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--bg-color);
+    border-color: var(--border-color);
+}
+.preferences-panel.show {
+    max-height: 200px; /* Adjust as needed for content, allows smooth transition */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Class to hide the path display container */
+.paths-hidden {
+    display: none;
+}
+
+/* Custom styles to replicate the screenshot's overall container look */
+.demo-container {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-2xl */
+    padding: 1rem; /* p-4 */
+    color: var(--text-color);
+}
+
+/* Inner container within the demo */
+.demo-inner {
+    background-color: var(--bg-color);
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1.5rem; /* p-6 */
+}
+.notice {
+    color: var(--text-dim-color);
+    border: 1px dashed var(--border-color);
+}
+
+/* Input fields styling to adapt to themes */
+.input-field, #sourcePath, #backupPath {
+    background-color: var(--card-bg-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+#sourcePath, #backupPath {
+    background-color: var(--bg-color);
+}
+select.input-field {
+    color: var(--text-color);
+}
+
+/* Log table header styling */
+.log-table th {
+    background-color: var(--bg-color);
+    color: var(--text-dim-color);
+}
+
+/* Log table cell styling */
+.log-table td {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+
+.log-table .placeholder-row td {
+    color: var(--text-dim-color);
+}
+
+/* Progress bar styling */
+#progressContainer .w-full {
+    background-color: var(--border-color);
+}
+#progressBar {
+    background-color: var(--accent-color);
+}
+#statusText {
+    color: var(--text-dim-color);
+}
+
+/* Footer styling */
+footer {
+    border-color: var(--border-color);
+}
+footer, footer p {
+    color: var(--text-dim-color);
+}
+footer a {
+    color: var(--accent-color);
+}
+
+/* #6EE7B7, #3B82F6 */
+.text-gradient {
+    background: linear-gradient(to right, #6EE7B7, #3B82F6);
+    opacity: 0.8;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Slightly lighter blur for other blurred sections */
+.blur-8 {
+    opacity: 0.8;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Add to style.css */
+.button-primary {
+  background: linear-gradient(90deg, #4f46e5, #0d9488);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.08);
+  border: none;
+  cursor: pointer;
+}
+.button-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(13,148,136,0.12);
+}
+
+/* Logo styles */
+.app-logo-title {
+    gap: 1.25rem; /* 20px, same as Tailwind gap-4 */
+    align-items: center;
+}
+.logo-img {
+    height: 3.5rem;   /* 56px, matches text-6xl line height */
+    width: 3.5rem;    /* Keep it square */
+    object-fit: contain;
+    display: block;
+}
+@media (min-width: 768px) {
+    .logo-img {
+        height: 4.5rem; /* 72px for larger screens */
+        width: 4.5rem;
+    }
+}
+
