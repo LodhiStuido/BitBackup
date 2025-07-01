@@ -167,10 +167,8 @@ footer a {
 
 /* #6EE7B7, #3B82F6 */
 .text-gradient {
-    background: linear-gradient(to right, #6EE7B7, #3B82F6);
-    opacity: 0.8;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #000000, #808080);
+    opacity: .8;
 }
 
 /* Slightly lighter blur for other blurred sections */
@@ -182,7 +180,8 @@ footer a {
 
 /* Add to style.css */
 .button-primary {
-  background: linear-gradient(90deg, #4f46e5, #0d9488);
+  background: linear-gradient(to right, #000000, #808080);
+  opacity: 0.9;
   color: #fff;
   font-weight: bold;
   padding: 0.75rem 2rem;
@@ -193,6 +192,7 @@ footer a {
   border: none;
   cursor: pointer;
 }
+
 .button-primary:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 16px rgba(13,148,136,0.12);
